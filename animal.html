@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animal Race</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header>
+      <h1>Animal Race</h1>
+    </header>
+    <script>
+      function Animal(name, speed, focus) {
+        this.name = name;
+        this.speed = speed;
+        this.focus = focus;
+
+        this.position = 0;
+        this.run = function() {
+          this.incline = Math.random() * 10;
+          var current_speed;
+
+          if (this.incline >= 3 && this.incline <= 5) {
+            current_speed = (this.speed * 0.7);
+          } else if (this.incline > 5 && this.incline <= 8) {
+            current_speed = (this.speed * 0.4);
+          } else if (this.incline > 8 && this.incline < 10) {
+            current_speed = (this.speed * 0.2);
+          } else {
+            current_speed = this.speed;
+          }
+
+          if (Math.random() * 10 < this.focus) {
+            this.position += current_speed;
+          };
+        };
+        this.report = function() {
+          console.log(this.name + " has run " + this.position);
+        };
+      }
+
+      var rabbit = new Animal("Bugsy", 7, 2);
+      var turtle = new Animal("Mo", 2, 8);
+
+      while (rabbit.position < 100 && turtle.position < 100) {
+        rabbit.run();
+        turtle.run();
+
+        rabbit.report();
+        turtle.report();
+      }
+    </script>
+  </body>
+</html>
