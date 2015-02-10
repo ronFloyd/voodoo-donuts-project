@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Listener</title>
+  </head>
+  <body>
+    <div id="page">
+      <h1>List King</h1>
+      <h2>New Account</h2>
+      <form method="post" action="http://www.example.org/register">
+
+        <label for="username">Create a username: </label>
+        <input type="text" id="username" />
+        <div id="feedback"></div>
+
+        <label for="password">Create a password: </label>
+        <input type="password" id="password" />
+
+        <input type="submit" value="sign up" />
+
+      </form>
+    </div>
+    <script>
+      function checkUsername() {
+        var elMsg = document.getElementById('feedback');
+
+        if (this.value.length < 5) {
+          elMsg.textContent = 'Username must be 5 characters or more, suckafoo!';
+        } else {
+          elMsg.textContent = '';
+        }
+      }
+
+      var elUsername = document.getElementById('username');
+
+      elUsername.addEventListener('blur', checkUsername, false);
+    </script>
+  </body>
+</html>

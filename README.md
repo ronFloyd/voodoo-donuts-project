@@ -1,4 +1,22 @@
+# Voodoo Donuts Events README
+
+#### February 10, 2015
+
+### Project Documentation:
+
+* The input for this project is the data from the [google docs table](https://docs.google.com/a/codefellows.com/spreadsheets/d/1JxWujsnj2uBpd5UaNkUY6DZFKIh0MBo0nuK9OY9txfg/edit?usp=sharing) from the previous assignment.
+
+* At this point the input has been manually entered as arguments for each location instance of the Voodoo object. In the future, I'd like to create an edit button, which would bring up a form the user could enter new data into.
+
+* The output is two tables in HTML. The first one is a reproduction of the table presented to us in the google docs data file. The other table shows hourly and daily donut requirements for each location.
+
+* The output goes to the index.html page. There will be no more console output at this stage of the project.
+
+#-------------------------------------------------------------------------------
+
 # Voodoo Donuts Project README
+
+#### February 9, 2015
 
 ### Project Documentation:
 
