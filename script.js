@@ -70,7 +70,14 @@ for(var i = 0; i < shops.length; i++) {
   document.getElementById("traffic" + i).textContent = shops[i].traffic;
   document.getElementById("entered" + i).textContent = shops[i].entered;
   document.getElementById("ordered" + i).textContent = shops[i].ordered;
-  //document.getElementById("total" + i).textContent = shops[i].total;
 }
+
+//Function to rename page title.
+function editTitle() {
+  var getTitle = document.getElementById('title');
+  getTitle.textContent = this.value;
+}
+var elTitle = document.getElementById('editTitle');
+elTitle.addEventListener('blur', editTitle, false);
 
 
