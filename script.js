@@ -6,31 +6,15 @@ function Voodoo(location, id, hours, traffic, entered, ordered) {
   this.entered = entered;
   this.ordered = ordered;
 
-  this.reportLocation = function(location) {
+  this.report = function(content, element) {
     var loc = document.getElementById(this.id);
-    var newEl = document.createElement('th');
-    var newText = document.createTextNode(location);
+    var newEl = document.createElement(element);
+    var newText = document.createTextNode(content);
     newEl.appendChild(newText);
     loc.appendChild(newEl);
   };
 
-  this.reportHourly = function(hour, donuts) {
-    var loc = document.getElementById(this.id);
-    var newEl = document.createElement('td');
-    var newText = document.createTextNode(donuts);
-    newEl.appendChild(newText);
-    loc.appendChild(newEl);
-  };
-
-  this.reportDaily = function(donuts) {
-    var loc = document.getElementById(this.id);
-    var newEl = document.createElement('td');
-    var newText = document.createTextNode(donuts);
-    newEl.appendChild(newText);
-    loc.appendChild(newEl);
-  };
-
-  this.reportLocation(location);
+  this.report(location, 'th');
 
   this.calculate = function() {
     var open = this.hours[0],
@@ -42,11 +26,11 @@ function Voodoo(location, id, hours, traffic, entered, ordered) {
     for(var i = open; i <= close; i++) {
       randomTraffic = Math.floor(Math.random() * (this.traffic[1] - this.traffic[0]) + this.traffic[0]);
       donutsPerHour = Math.floor(randomTraffic * this.entered * this.ordered);
-      this.reportHourly(i, donutsPerHour);
+      this.report(donutsPerHour, 'td');
       total += donutsPerHour;
     }
 
-    this.reportDaily(total);
+    this.report(total, 'td');
   };
 }
 
@@ -58,13 +42,8 @@ var downtown = new Voodoo("Downtown", "downtown", [7,18], [80, 220], 0.10, 4),
 
 var shops = [downtown, capitolHill, southLakeUnion, wedgewood, ballard];
 
-downtown.calculate();
-capitolHill.calculate();
-southLakeUnion.calculate();
-wedgewood.calculate();
-ballard.calculate();
-
 for(var i = 0; i < shops.length; i++) {
+  shops[i].calculate();
   document.getElementById("location" + i).textContent = shops[i].location;
   document.getElementById("hours" + i).textContent = shops[i].hours;
   document.getElementById("traffic" + i).textContent = shops[i].traffic;
