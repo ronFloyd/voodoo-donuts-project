@@ -45,9 +45,9 @@ var shops = [downtown, capitolHill, southLakeUnion, wedgewood, ballard];
 for(var i = 0; i < shops.length; i++) {
   shops[i].calculate();
   document.getElementById("location" + i).textContent = shops[i].location;
-  document.getElementById("hours" + i).textContent = shops[i].hours;
-  document.getElementById("traffic" + i).textContent = shops[i].traffic;
-  document.getElementById("entered" + i).textContent = shops[i].entered;
+  document.getElementById("hours" + i).textContent = "0" + shops[i].hours[0] + "00" + " - " + shops[i].hours[1] + "00";
+  document.getElementById("traffic" + i).textContent = shops[i].traffic[0] + " - " + shops[i].traffic[1];
+  document.getElementById("entered" + i).textContent = (shops[i].entered * 100) + "%";
   document.getElementById("ordered" + i).textContent = shops[i].ordered;
 }
 
