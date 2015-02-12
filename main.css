@@ -1,27 +1,50 @@
 body {
-  font-family: Arial, Verdana, sans-serif;
-  color: #111111;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url(http://static.communitytable.com/wp-content/uploads/2014/06/donut-day-facts-ftr.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+div {
+  width: 800px;
+  margin: 0 auto;
+}
+h3 {
+  margin-bottom: 5px;
+
+}
+h1 {
+  color: #efefef;
+  width: 360px;
+  border: 1px solid #111111;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #111111;
+  opacity: 0.75;
+  margin: auto;
+
 }
 table {
   width: 600px;
+  border: 1px solid #111111;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #111111;
+  opacity: 0.75;
+  margin: auto;
+
 }
 th, td {
-  padding: 7px 10px 10px 10px;
+  padding: 7px;
+  background-color: #efefef;
+  border: 1px solid #111111;
+  border-radius: 3px;
+  text-align: center;
 }
 th {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 90%;
-  border-bottom: 2px solid #111111;
-  border-top: 1px solid #999;
-  text-align: left;
-}
-tr.even {
-  background-color: #efefef;
+  font-size: 14px;
 }
 tr:hover {
-  background-color: #c3e6e5;
-}
-.money {
-  text-align: right;
+  background-color: blue;
 }
