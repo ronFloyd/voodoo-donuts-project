@@ -78,11 +78,10 @@ for(var i = 0; i < shops.length; i++) {
 }
 
 //Function to edit td data on click.******************
-function editTableData() {
-
-  var change = prompt("Edit this cell:");
-  var text = document.createTextNode(change);
-  this.appendChild(text);
+function editTableData(event) {
+  // event.preventDefault();
+  // event.stopPropagation();
+  this.textContent = prompt("Edit this cell:");
 }
 //****************************************************
 

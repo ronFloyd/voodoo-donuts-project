@@ -1,5 +1,9 @@
 # Voodoo Donuts Events README
 
+#### February 13, 2015
+
+Added awesome-sauce.
+
 #### February 10, 2015
 
 ### Project Documentation:
