@@ -1,4 +1,4 @@
-//Function to rename page title.********************
+//*****************jQuery method to edit title.****************
 $(function() {
 
   var $newItemButton = $('#newItemButton'),
@@ -23,14 +23,6 @@ $(function() {
   });
 })
 
-// function editTitle() {
-//   var getTitle = document.getElementById('title');
-//   getTitle.textContent = this.value;
-// }
-// var elTitle = document.getElementById('editTitle');
-// elTitle.addEventListener('blur', editTitle, false);
-//**************************************************
-
 function Voodoo(location, id, hours, traffic, entered, ordered) {
   this.location = location;
   this.id = id;
@@ -40,11 +32,9 @@ function Voodoo(location, id, hours, traffic, entered, ordered) {
   this.ordered = ordered;
 
   this.report = function(content, element) {
-    var loc = document.getElementById(this.id);
-    var newEl = document.createElement(element);
-    var newText = document.createTextNode(content);
-    newEl.appendChild(newText);
-    loc.appendChild(newEl);
+    $(this).add(element)
+                          .add(content);
+    console.log($newText);
   };
 
   this.report(location, 'th');
@@ -108,3 +98,5 @@ function editTableData(event) {
   this.textContent = prompt("Edit this cell:");
 }
 //****************************************************
+
+
