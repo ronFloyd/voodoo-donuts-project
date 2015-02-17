@@ -1,34 +1,14 @@
 //Function to rename page title.********************
 $(function() {
+  var $textInput = $('input:text');
 
-  var $newItemButton = $('#newItemButton'),
-      $newItemForm = $('#newItemForm'),
-      $textInput = $('input:text');
-
-  $newItemButton.show();
-  $newItemForm.hide();
-
-  $('#showForm').on('click', function() {
-    $newItemButton.hide();
-    $newItemForm.show();
-  });
-
-  $newItemForm.on('submit', function(e) {
+  $('#formTitle').on('submit', function(e) {
     e.preventDefault();
     var newText = $('input:text').val();
     $('#title').text(newText);
-    $newItemForm.hide();
-    $newItemButton.show();
     $textInput.val('');
   });
 })
-
-// function editTitle() {
-//   var getTitle = document.getElementById('title');
-//   getTitle.textContent = this.value;
-// }
-// var elTitle = document.getElementById('editTitle');
-// elTitle.addEventListener('blur', editTitle, false);
 //**************************************************
 
 function Voodoo(location, id, hours, traffic, entered, ordered) {
@@ -80,31 +60,29 @@ var shops = [downtown, capitolHill, southLakeUnion, wedgewood, ballard];
 for(var i = 0; i < shops.length; i++) {
   shops[i].calculate();
 
-  document.getElementById("location" + i).textContent = shops[i].location;
-  var editCell = document.getElementById('hours' + i);
-  editCell.textContent = "0" + shops[i].hours[0] + "00" + " - " + shops[i].hours[1] + "00";
-  editCell.addEventListener('click', editTableData , false);
+  $("#location" + i).text(shops[i].location);
+  var $editCell = $('#hours' + i);
+  $editCell.text("0" + shops[i].hours[0] + "00" + " - " + shops[i].hours[1] + "00");
+  $editCell.on('click', editTableData);
 
-  document.getElementById("traffic" + i).textContent = shops[i].traffic[0];
-  var editCell = document.getElementById('traffic' + i);
-  editCell.textContent = shops[i].traffic[0] + " - " + shops[i].traffic[1];
-  editCell.addEventListener('click', editTableData , false);
+  $("#traffic" + i).text(shops[i].traffic[0]);
+  var $editCell = $('#traffic' + i);
+  $editCell.text(shops[i].traffic[0] + " - " + shops[i].traffic[1]);
+  $editCell.on('click', editTableData);
 
-  document.getElementById("entered" + i).textContent = (shops[i].entered * 100) + "%";
-  var editCell = document.getElementById('entered' + i);
-  editCell.textContent = (shops[i].entered * 100) + "%";
-  editCell.addEventListener('click', editTableData , false);
+  $("#entered" + i).text((shops[i].entered * 100) + "%");
+  var $editCell = $('#entered' + i);
+  $editCell.text((shops[i].entered * 100) + "%");
+  $editCell.on('click', editTableData);
 
-  document.getElementById("ordered" + i).textContent = shops[i].ordered;
-  var editCell = document.getElementById('ordered' + i);
-  editCell.textContent = shops[i].ordered;
-  editCell.addEventListener('click', editTableData , false);
+  $("#ordered" + i).text(shops[i].ordered);
+  var $editCell = $('#ordered' + i);
+  $editCell.text(shops[i].ordered);
+  $editCell.on('click', editTableData);
 }
 
 //Function to edit td data on click.******************
 function editTableData(event) {
-  // event.preventDefault();
-  // event.stopPropagation();
   this.textContent = prompt("Edit this cell:");
 }
 //****************************************************
